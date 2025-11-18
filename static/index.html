@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TranslateMe - Real-time Sign Language Translation</title>
+    <meta name="description" content="Experience real-time sign language translation with our interactive service. Convert American Sign Language to text instantly.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">TranslateMe</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p>Experience real-time sign language translation with our interactive service</p>
+    </header>
+
+    <main class="main-container">
+        <div class="translator-card">
+            <div class="card-header">
+            </div>
+
+            <div class="card-body">
+                <div class="video-section">
+                    <h3>Video Input</h3>
+                    
+                    <div id="videoContainer" class="video-container">
+                        <div class="video-placeholder">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            <p id="videoStatus">Camera Feed</p>
+                        </div>
+                        <video id="video" autoplay playsinline></video>
+                        <canvas id="canvas" style="display: none;"></canvas>
+                    </div>
+
+                    <div class="controls">
+                        <button id="startButton" class="btn btn-primary">Start Capturing</button>
+                        <button id="stopButton" class="btn btn-outline" disabled>Stop Capturing</button>
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <h3>Detected Sentence</h3>
+                    
+                    <textarea 
+                        id="detectedText" 
+                        placeholder="Detected signs will appear here..."
+                        readonly
+                    ></textarea>
+
+                    <div class="controls">
+                        <button id="copyButton" class="btn btn-outline">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions-card">
+            <h2>How to use this service</h2>
+            
+            <ol class="instructions-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <span>Ensure your <strong>camera</strong> is connected and working</span>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <span>Click on <strong>Start Capturing</strong> to enable your camera</span>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <span>Position yourself in the frame and perform <strong>American Sign Language</strong> gestures</span>
+                </li>
+                <li>
+                    <span class="step-number">4</span>
+                    <span>Each <strong>gesture detection</strong> happens with a 1-2 second delay, and the predicted character is sent to the detected sentence field</span>
+                </li>
+            </ol>
+
+            <div class="note">
+                <strong>Note:</strong> Please check your browser's capabilities.
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright © 2025 TranslateMe - All rights reserved</p>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
