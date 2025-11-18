@@ -1,0 +1,9 @@
+[project]
+name = "translateme"
+version = "0.1.0"
+description = "The Translator converts ASL Sign Language into written language."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "customtkinter>=5.2.2",
+]
