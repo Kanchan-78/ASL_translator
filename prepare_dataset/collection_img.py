@@ -6,7 +6,7 @@ from customtkinter import CTkImage
 
 # Main Config
 DATA_PATH = '../dataset'
-TOTAL_CLASSES = 1
+TOTAL_CLASSES = 26
 IMAGES_PER_CLASS = 1000
 
 ctk.set_appearance_mode("dark")
