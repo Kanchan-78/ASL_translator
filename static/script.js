@@ -109,6 +109,12 @@ function stopCapture() {
     
     startButton.disabled = false;
     stopButton.disabled = true;
+
+    localStorage.removeItem("sessionId");
+    const sessionId = crypto.randomUUID();
+    localStorage.setItem("sessionId", sessionId);
+
+    detectedText.value = '';
 }
 
 startButton.addEventListener('click', startCapture);
